@@ -3,7 +3,6 @@
 Hook('User Is Not Logged In - Before Presentation','PublicPageBefore();');
 
 function PublicPageBefore(){
-  Nav('main-not-logged-in','link','Explore','/explore');
   Nav('main-not-logged-in','link','Login','/login');
 }
 
@@ -42,7 +41,7 @@ function UserPage(){
       include('UserExplore.php');
       TemplateBootstrap4('explore','UserExploreBodyCallback();');
       break;
-    default:
+    case false:
       include('UserHomepage.php');
       TemplateBootstrap4('Home','UserHomepageBodyCallback();');
       break;
